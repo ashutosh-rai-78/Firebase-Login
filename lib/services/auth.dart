@@ -8,7 +8,6 @@ final GoogleSignIn googleSignIn = GoogleSignIn();
 //SIGN IN FUNCTION
 
 Future<User?> signInWithGoogle() async {
-
   //SIgn with Google
   final GoogleSignInAccount? googleSignInAccount = await googleSignIn.signIn();
   final GoogleSignInAuthentication googleSignInAuthentication =
@@ -30,6 +29,9 @@ Future<User?> signInWithGoogle() async {
   final User? currentUser = await _auth.currentUser;
 
   assert(currentUser!.uid == user!.uid);
+
+
+  print(user);
 
   return user;
 }
