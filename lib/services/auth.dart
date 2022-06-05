@@ -23,7 +23,7 @@ Future<User?> signInWithGoogle() async {
   final User? user = userCredential.user;
 
   // Checking is on
-  assert(user!.isAnonymous);
+  assert(!user!.isAnonymous);
   assert(await user!.getIdToken() != null);
 
   final User? currentUser = await _auth.currentUser;
